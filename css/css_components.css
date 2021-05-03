@@ -178,12 +178,27 @@ html, body{
     top: 0;
     z-index: 10;
     background-color: rgba(0,0,0,0.4); 
+    font-size: 30px;
 }
 
 #popupcontent{
     background-color: #fefefe;
-    margin: 10%;
-    padding: 5%;
-    border: 1px solid #888;
-    width: 70%;
+    height: 70vh;
+    margin-left: 10vw;
+    margin-top: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    border: solid;
+    border-color: black;
+    border-radius: 5%;
+    width: 70vw;
+}
+
+#popupimg{
+    height:30%;
+    width:auto;
+    background-size:contain;
+    background-repeat: no-repeat;
 }
