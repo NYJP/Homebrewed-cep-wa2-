@@ -141,6 +141,13 @@ html, body{
     z-index: 3;
 }
 
+.col > div > img:hover, #optional > div> img:hover{
+    position: relative;
+    z-index: 3;
+    border-width: 3px;
+    opacity: 0.7;
+}
+
 #lines{
     width: var(--linewidth);
     z-index: 2;
@@ -160,4 +167,23 @@ html, body{
     margin:2.5%;
     background-color: white;
     float:left;
+}
+
+#popup{
+    display: none; 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.4); 
+}
+
+#popupcontent{
+    background-color: #fefefe;
+    margin: 10%;
+    padding: 5%;
+    border: 1px solid #888;
+    width: 70%;
 }
