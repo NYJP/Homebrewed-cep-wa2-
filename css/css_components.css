@@ -1,0 +1,163 @@
+:root {
+    --buttonsize: 10px;
+    --buttontopmar: 0.2vw;
+    --btnsz: 100px;
+    --linewidth: 0px;
+}
+
+html, body{
+    height: 100%;
+    min-height: 700px;
+    margin:0;
+    min-width:400px;
+    background-color: cornsilk;
+    font-family: monospace;
+    font-size:20px;
+}
+
+#banner{
+    background-image: url(Resources/Banner.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-top:0;
+    padding: 0px;
+    width:auto;
+    height:33%;
+}
+
+#header{
+    position: absolute;
+    left:4px;
+    top:4px;
+    font-family: monospace;
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 4px;
+    padding-bottom: 3px;
+    width: 198px;
+    background: rgb(255, 255, 255,0.5);
+}
+
+#nav{
+    margin:0px;
+    margin-bottom: 0px;
+    height: 5%;
+    text-align: right;
+    background-color: grey;
+    
+}
+#nav > *{
+    background: rgb(255, 255, 255,0.35);
+    margin-right: 1vw;
+    margin-left: 1vw;
+    display:inline-block;
+    width:var(--buttonsize);
+    height:var(--buttonsize);
+    border-radius: 50%;
+    text-align: center;
+    margin-top: var(--buttontopmar);
+}
+
+#nav > *:hover{
+    background: rgb(255, 255, 255,0.7);
+}
+
+#nav > * > a > img{
+    margin-top: 1%;
+    width:90%;
+    height:100%;
+    display:inline-block;
+    object-fit: contain;
+    border-radius: 50%;
+    border-width: 10px;
+}
+
+.col{
+    height: auto;
+    width: 19.5%;
+    float:left;
+    padding-top: 2%;
+}
+
+#col1, #col2{
+    margin:0;
+    margin-right: 5%;
+}
+
+.col > *, .col > * > img{
+    width:100%;
+}
+
+#col1 > div, #col3 > div{
+    width: 100%;
+    height: var(--btnsz);
+    float: left;
+    background-color: white;
+}
+
+.col > div > img, #optional > div > img{
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    border-width: 1%;
+    border: solid;
+    border-color: black;
+    border-radius: 5%;
+}
+
+#col2{
+    width: 50%;
+}
+
+#col2 > div{
+    width: 40%;
+    height: var(--btnsz);
+    float: left;
+    margin: 5%;
+    background-color: white;
+}
+
+#col1 > div{
+    margin-bottom: 25%;
+}
+
+#col2 > div{
+    margin-top: 12%;
+}
+
+#col2 > img{
+    border: solid;
+    border-color: black;
+    border-radius: 5%;
+    margin-top: 10%;
+}
+
+#col3 > div{
+    margin-bottom: 25%;
+}
+
+.col > div{
+    position: relative;
+    z-index: 3;
+}
+
+#lines{
+    width: var(--linewidth);
+    z-index: 2;
+    position:absolute;
+    pointer-events: none;
+    display: block;
+}
+
+#optional{
+    height:var(--btnsz);
+    width:100%;
+    float:left;
+}
+#optional > div{
+    width: 20%;
+    height: 100%;
+    margin:2.5%;
+    background-color: white;
+    float:left;
+}
