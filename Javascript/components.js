@@ -14,6 +14,20 @@ function resizenav(){
 window.addEventListener('resize',resizenav);
 resizenav()
 
+
+var popup = document.getElementById("popup");
+var content = document.getElementById("popupcontent");
+var header = document.getElementById("popupheader");
+var image = document.getElementById("popupimage");
+
 function showpopup(x){
-    console.log(x);
+    popup.style.display = "block";
+    content.innerHTML = 'content for' + x + '!';
+    header.innerHTML = x;
 }
+
+window.onclick = function(event){
+    if(event.target == popup) {
+        popup.style.display = "none";
+    }
+  }
