@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project Homebrew: build</title>
+    <link rel="stylesheet" href="css/css_build.css">
+</head>
+<body>
+    </div>
+    <div id='banner'>
+        <div id='header'>Project <br> Homebrew <br> [Build]</div>
+    </div>
+
+    <div id='nav'>
+        <div class = 'nav' id='home'><a href='index.html'><img src='css/Resources/home.png'></a></div>
+        <div class = 'nav' id='about'><a href='about.html'><img src='css/Resources/about.png'></a></div>
+        <div class = 'nav' id='components'><a href='components.html'><img src='css/Resources/components.png'></a></div>
+    </div>
+    
+    <div class='col' id='col1'>
+        <div><img onclick="showpopup('Buy Parts')" src='css/Resources/Shop.png'></div>
+        <div><img onclick="showpopup('Prepare Operating System')" src='css/Resources/OS drive.png'></div>
+        <div><img onclick="showpopup('Install Motherboard')" src='css/Resources/Insert Motherboard.png'></div>
+        <div><img onclick="showpopup('Install GPU')" src='css/Resources/graphics card.png'></div>
+        <div><img onclick="showpopup('Complete Wiring')" src='css/Resources/wire.png'></div>
+        <div><img onclick="showpopup('Close up casing')" src='css/Resources/Close Casing.png'></div>
+        <div><img onclick="showpopup('Configure BIOS')" src='css/Resources/BIOS.png'></div>
+    </div>
+    <div class='col' id='col2'>
+        <img src='css/Resources/Process diagram.png'>
+    </div>
+    <div class='col' id='col3'>
+        <div><img onclick="showpopup('Research and Plan')" src='css/Resources/Research.png'></div>
+        <div><img onclick="showpopup('Prepare Casing')" src='css/Resources/casing.png'></div>
+        <div><img onclick="showpopup('Prepare Motherboard')" src='css/Resources/Prepare Motherboard.png'></div>
+        <div><img onclick="showpopup('Install PSU')" src='css/Resources/power supply.png'></div>
+        <div><img onclick="showpopup('Install HDD*')" src='css/Resources/hard disk drive.png'></div>
+        <div><img onclick="showpopup('Install Fan*')" src='css/Resources/fan.png'></div>
+        <div><img onclick="showpopup('Connect input and output devices')" src='css/Resources/Connect IO devices.png'></div>
+    </div>
+
+    <div id='popup'>
+        <div id='popupcontent'>
+            <h1 style='margin-top:5px' id='popupheader'>Component</h1>
+            <div id='popupimg'></div>
+            <br><div id='popuptxt'>text added by js</div>
+        </div>
+    </div>
+    
+    <script src="Javascript/build.js"></script>
+</body>
+</html>
