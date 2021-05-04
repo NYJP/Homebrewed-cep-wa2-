@@ -2,7 +2,8 @@
     --buttonsize: 10px;
     --buttontopmar: 0.2vw;
     --btnsz: 100px;
-    --linewidth: 0px;
+    --col1align:0px;
+    --col3align:0px;
 }
 
 html, body{
@@ -34,7 +35,7 @@ html, body{
     font-weight: bold;
     padding-left: 4px;
     padding-bottom: 3px;
-    width: 198px;
+    width: 138px;
     background: rgb(255, 255, 255,0.5);
 }
 
@@ -74,30 +75,33 @@ html, body{
 
 .col{
     height: auto;
-    width: 19.5%;
+    width: 19%;
     float:left;
     padding-top: 2%;
+    margin-top: 2%;
 }
 
-#col1, #col2{
-    margin:0;
-    margin-right: 5%;
+#col1{
+    margin-left: 1%;
 }
 
-.col > img, .col > * > img{
+#col2{
+    width: 60%;
+    background-color: cornsilk;
+}
+
+.col > *{
     width:100%;
-    background-color: white;
 }
 
 #col1 > div, #col3 > div{
     width: 100%;
     height: var(--btnsz);
-    float: left;
 }
 
-.col > div > img, #optional > div > img{
-    width: 100%;
-    height: 100%;
+.col > div > img{
+    width: 96%;
+    height: 96%;
     object-fit: scale-down;
     border-width: 1%;
     border: solid;
@@ -106,66 +110,33 @@ html, body{
     background-color: white;
 }
 
-#col2{
-    width: 50%;
-}
-
-#col2 > div{
-    width: 40%;
-    height: var(--btnsz);
-    float: left;
-    margin: 5%;
-}
-
-#col1 > div{
-    margin-bottom: 25%;
-}
-
-#col2 > div{
-    margin-top: 12%;
-}
-
-#col2 > img{
-    border: solid;
-    border-color: black;
-    border-radius: 5%;
-    margin-top: 10%;
-}
-
-#col3 > div{
-    margin-bottom: 25%;
-}
-
-.col > div{
-    position: relative;
-    z-index: 3;
-}
-
-.col > div > img:hover, #optional > div> img:hover{
-    position: relative;
-    z-index: 3;
+.col > div > img:hover{
     border-width: 3px;
 }
 
-#lines{
-    width: var(--linewidth);
-    z-index: 2;
-    position:absolute;
-    pointer-events: none;
-    display: block;
+#col1{
+    margin-top: var(--col1align);
 }
 
-#optional{
-    height:var(--btnsz);
-    width:100%;
-    float:left;
+#col3{
+    margin-top: var(--col3align);
 }
-#optional > div{
-    width: 20%;
-    height: 100%;
-    margin:2.5%;
-    float:left;
+
+#col1 > div{
+    padding-top:58%;
 }
+
+#col1 > div > img{
+    float: right;
+}
+
+#col3 > div{
+    padding-top:58%;
+    float: left;
+}
+
+
+
 
 
 #popup{
@@ -181,6 +152,7 @@ html, body{
 }
 
 #popupcontent{
+    background-color: #fefefe;
     height: 70vh;
     margin-left: 10vw;
     margin-top: 10vh;
@@ -192,7 +164,6 @@ html, body{
     border-color: black;
     border-radius: 25px;
     width: 70vw;
-    background-color: white;
 }
 
 #popupimg{
