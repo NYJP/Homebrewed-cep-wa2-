@@ -11,46 +11,48 @@
     </div>
 
     <div id='nav'>
-        <div class = 'nav' id='home'><a href='index.html'><img src='css/Resources/home.png'></a></div>
-        <div class = 'nav' id='about'><a href='about.html'><img src='css/Resources/about.png'></a></div>
-        <div class = 'nav' id='build'><a href='build.html'><img src='css/Resources/build.png'></a></div>
+        <div class = 'nav' onclick="window.open('index.html','_self')"><a href='index.html'><img src='css/Resources/home.png'>Home</a></div>
+        <div class = 'nav' onclick="window.open('about.html','_self')"><a href='about.html'><img src='css/Resources/about.png'>About</a></div>
+        <div class = 'nav' onclick="window.open('build.html','_self')"><a href='build.html'><img src='css/Resources/build.png'>Build</a></div>
     </div>
-    <br>Computer components<br><br>
+    <br><p style='margin-bottom:0;'>Computer components</p><br><br>
 
     <img id='lines' src='css/Resources/diagram lines.png'>
     
     <div class='col' id='col1'>
-        <div><img onclick="showpopup('Casing')" src='css/Resources/casing.png'></div>
-        <div><img onclick="showpopup('Keyboard')" src='css/Resources/keyboard.png'></div>
-        <div><img onclick="showpopup('PSU (Power Supply)')" src='css/Resources/power supply.png'></div>
+        <div><img onclick="showpopup('Casing')" src='css/Resources/casing.png'><div class='name' onclick="showpopup('Casing')">Casing</div></div>
+        <div><img onclick="showpopup('Keyboard')" src='css/Resources/keyboard.png'><div class='name' onclick="showpopup('Keyboard')">Keyboard</div></div>
+        <div><img onclick="showpopup('PSU (Power Supply)')" src='css/Resources/power supply.png'><div class='name' onclick="showpopup('PSU (Power Supply)')">PSU</div></div>
+        <p id='casingheader'>Inside<br>Casing</p>
     </div>
     <div class='col' id='col2'>
-        <img src='css/Resources/Computer Diagram part1.png'>
-        <div><img onclick="showpopup('Motherboard')" src='css/Resources/motherboard.png'></div>
-        <div><img onclick="showpopup('Processor')" src='css/Resources/processor.png'></div>
+        <p id='setupheader'>Setup</p>
+        <img id = 'setup' src='css/Resources/Computer Diagram part1.png'>
+        <div><img onclick="showpopup('Motherboard')" src='css/Resources/motherboard.png'><div class='name' onclick="showpopup('Motherboard')">Motherboard</div></div>
+        <div><img onclick="showpopup('Processor')" src='css/Resources/processor.png'><div class='name' onclick="showpopup('Processor')">Processor</div></div>
         <img src='css/Resources/Computer Diagram part2.png'>
-        <div><img onclick="showpopup('GPU (Graphics Processing Unit)')" src='css/Resources/graphics card.png'></div>
-        <div><img onclick="showpopup('SSD (Solid State Drive)')" src='css/Resources/solid state drive.png'></div>
+        <div><img onclick="showpopup('GPU (Graphics Processing Unit)')" src='css/Resources/graphics card.png'><div class='name' onclick="showpopup('GPU (Graphics Processing Unit)')">GPU</div></div>
+        <div><img onclick="showpopup('SSD (Solid State Drive)')" src='css/Resources/solid state drive.png'><div class='name' onclick="showpopup('SSD (Solid State Drive)')">SSD</div></div>
     </div>
     <div class='col' id='col3'>
-        <div><img onclick="showpopup('Monitor')" src='css/Resources/monitor.png'></div>
-        <div><img onclick="showpopup('Mouse')" src='css/Resources/mouse.png'></div>
-        <div><img onclick="showpopup('RAM (Random Access Memory)')" src='css/Resources/ram.png'></div>
-        <div><img onclick="showpopup('HDD (Hard Disk Drive)')" src='css/Resources/hard disk drive.png'></div>
-        <div><img onclick="showpopup('Wires')" src='css/Resources/wire.png'></div>
+        <div><img onclick="showpopup('Monitor')" src='css/Resources/monitor.png'><div class='name' onclick="showpopup('Monitor')">Monitor</div></div>
+        <div><img onclick="showpopup('Mouse')" src='css/Resources/mouse.png'><div class='name' onclick="showpopup('Mouse')">Mouse</div></div>
+        <div><img onclick="showpopup('RAM (Random Access Memory)')" src='css/Resources/ram.png'><div class='name' onclick="showpopup('RAM (Random Access Memory)')">RAM</div></div>
+        <div><img onclick="showpopup('HDD (Hard Disk Drive)')" src='css/Resources/hard disk drive.png'><div class='name' onclick="showpopup('HDD (Hard Disk Drive)')">HDD</div></div>
+        <div><img onclick="showpopup('Wires')" src='css/Resources/wire.png'><div class='name' onclick="showpopup('Wires')">Wires</div></div>
     </div>
     <div id='optional'>
-        <br>Optional components:<br>
-        <div><img onclick="showpopup('NAS (Network Attached Storage)')" src='css/Resources/nas.png'></div>
-        <div><img onclick="showpopup('Router')" src='css/Resources/router.png'></div>
-        <div><img onclick="showpopup('UPS (Uninterruptible Power Source)')" src='css/Resources/ups.png'></div>
-        <div><img onclick="showpopup('Fan')" src='css/Resources/fan.png'></div>
+        <br><p style='margin-bottom:10px;'>Optional components:</p>
+        <div><img onclick="showpopup('NAS (Network Attached Storage)')" src='css/Resources/nas.png'><div class='name' onclick="showpopup('NAS (Network Attached Storage)')">NAS</div></div>
+        <div><img onclick="showpopup('Router')" src='css/Resources/router.png'><div class='name' onclick="showpopup('Router')">Router</div></div>
+        <div><img onclick="showpopup('UPS (Uninterruptible Power Source)')" src='css/Resources/ups.png'><div class='name' onclick="showpopup('UPS (Uninterruptible Power Source)')">UPS</div></div>
+        <div><img onclick="showpopup('Fan')" src='css/Resources/fan.png'><div class='name' onclick="showpopup('Fan')">Fan</div></div>
     </div>
     
     <div id='popup'>
         <div id='popupcontent'>
             <h1 style='margin-top:5px' id='popupheader'>Component</h1>
-            <div id='popupimg'></div>
+            <div id='popupimg' onload="resizenav()"></div>
             <br><div id='popuptxt'>text added by js</div>
         </div>
     </div>

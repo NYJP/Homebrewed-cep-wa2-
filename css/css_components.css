@@ -3,16 +3,25 @@
     --buttontopmar: 0.2vw;
     --btnsz: 100px;
     --linewidth: 0px;
+    --optionalnamemargin: 100px;
+    --namefonts: 20px;
+    --visualw:900px;
+    --aligndiagram:0px;
 }
 
 html, body{
+    text-align: center;
     height: 100%;
     min-height: 700px;
     margin:0;
     min-width:400px;
     background-color: cornsilk;
     font-family: monospace;
-    font-size:20px;
+    font-size:30px;
+    background-color: black;
+    color:lime;
+    font: Inconsolata, monospace;
+    text-shadow: 0 0 50px #C8C8C8;
 }
 
 #banner{
@@ -26,16 +35,17 @@ html, body{
 }
 
 #header{
+    text-align: left;
     position: absolute;
-    left:4px;
-    top:4px;
+    left:8px;
+    top:8px;
     font-family: monospace;
-    font-size: 30px;
+    font-size: 45px;
     font-weight: bold;
     padding-left: 4px;
     padding-bottom: 3px;
-    width: 198px;
-    background: rgb(255, 255, 255,0.5);
+    width: 320px;
+    background: rgba(0, 0, 0, 0.7);
 }
 
 #nav{
@@ -43,30 +53,46 @@ html, body{
     margin-bottom: 0px;
     height: 5%;
     text-align: right;
-    background-color: grey;
+    background-color: rgb(41, 41, 41);
     
 }
 #nav > *{
-    background: rgb(255, 255, 255,0.35);
+    background: rgb(255, 255, 255,0.2);
     margin-right: 1vw;
     margin-left: 1vw;
     display:inline-block;
     width:var(--buttonsize);
     height:var(--buttonsize);
-    border-radius: 50%;
+    border-radius: calc(0.5*var(--buttonsize));
     text-align: center;
     margin-top: var(--buttontopmar);
+    transition:width 0.5s; 
+    -webkit-transition:width 0.5s; 
+    text-align: center;
+    overflow: hidden;
+    border: lime solid 2px;
 }
 
 #nav > *:hover{
-    background: rgb(255, 255, 255,0.7);
+    background: rgb(255, 255, 255,0.2);
+    width: calc(6*var(--buttonsize));
+}
+
+#nav > * > a{
+    text-decoration: none;
+    font-size: calc(0.8*var(--buttonsize));
+    display:inline-block;
+    vertical-align: top;
+    color:lime;
+    font: Inconsolata, monospace;
+    text-shadow: 0 0 50px #C8C8C8;
 }
 
 #nav > * > a > img{
-    margin-top: 1%;
-    width:90%;
+    margin: calc(0.05*var(--buttonsize));
+    width: calc(0.9*var(--buttonsize));
     height:100%;
-    display:inline-block;
+    float:left;
     object-fit: contain;
     border-radius: 50%;
     border-width: 10px;
@@ -75,43 +101,50 @@ html, body{
 .col{
     height: auto;
     width: 19.5%;
+    max-width: 175.5px;
     float:left;
-    padding-top: 2%;
+    padding-top: calc(0.025*var(--visualw));;
+    text-align: center;
 }
+
 
 #col1, #col2{
     margin:0;
-    margin-right: 5%;
+    margin-right: calc(0.05*var(--visualw));
 }
 
 .col > img, .col > * > img{
     width:100%;
     background-color: white;
+    filter: brightness(70%);
 }
 
 #col1 > div, #col3 > div{
     width: 100%;
+    max-height: 175.5px;
     height: var(--btnsz);
     float: left;
 }
 
 .col > div > img, #optional > div > img{
-    width: 100%;
-    height: 100%;
+    width: calc(0.96*var(--btnsz));
+    height: calc(0.96*var(--btnsz));
     object-fit: scale-down;
-    border-width: 1%;
-    border: solid;
-    border-color: black;
+    border: calc(0.02*var(--btnsz)) solid lime;
     border-radius: 25px;
     background-color: white;
+    filter: brightness(70%);
 }
 
 #col2{
     width: 50%;
+    max-width:450px;
 }
 
 #col2 > div{
     width: 40%;
+    max-height: 175.5px;
+    max-width: 175.5px;
     height: var(--btnsz);
     float: left;
     margin: 5%;
@@ -119,6 +152,7 @@ html, body{
 
 #col1 > div{
     margin-bottom: 25%;
+    float:right;
 }
 
 #col2 > div{
@@ -127,8 +161,11 @@ html, body{
 
 #col2 > img{
     border: solid;
-    border-color: black;
-    border-radius: 5%;
+    border-color: lime;
+    border-radius: 25px;
+}
+
+#col2 > img:not(#setup){
     margin-top: 10%;
 }
 
@@ -141,10 +178,36 @@ html, body{
     z-index: 3;
 }
 
-.col > div > img:hover, #optional > div> img:hover{
-    position: relative;
-    z-index: 3;
-    border-width: 3px;
+.name:hover{
+    background-color: rgba(0, 0, 0, 0.75);
+    opacity: 0.6;
+}
+
+.name{
+    position: absolute;
+    opacity: 0;
+    z-index: 5;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    color:white;
+    border: calc(0.02*var(--btnsz)) solid lime;
+    border-radius: 25px;
+    font-size: var(--namefonts);
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.col > div > .name{
+    right:0;
+    left:0;
+    top:0;
+    width:calc(0.96*var(--btnsz));
+    height:calc(0.96*var(--btnsz));
 }
 
 #lines{
@@ -157,27 +220,72 @@ html, body{
 
 #optional{
     height:var(--btnsz);
-    width:100%;
-    float:left;
+    width:var(--linewidth);
 }
 #optional > div{
-    width: 20%;
+    width:calc(0.96*var(--btnsz));
     height: 100%;
-    margin:2.5%;
+    margin: 2.7%;
     float:left;
 }
 
+#optional > div > .name{
+    width: calc(0.96*var(--btnsz));
+    height: calc(0.96*var(--btnsz));
+    margin-top: var(--optionalnamemargin);
+}
+
+p{
+    font-size:  calc(var(--namefonts)*1.5);
+    text-align: center;
+}
+
+#casingheader{
+    position: absolute;
+    margin-top: calc(5*var(--btnsz));
+    margin-left: calc(0.2*var(--btnsz));
+}
+
+#setupheader{
+    margin-top: -10%;
+}
 
 #popup{
-    display: none; 
+    text-align: left;
+    display: block; 
     position: fixed;
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
+    opacity: 0;
     z-index: 10;
+    pointer-events: none;
     background-color: rgba(0,0,0,0.4); 
     font-size: 30px;
+}
+
+#popup.show {
+    opacity: 1;
+    pointer-events: all;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.nav:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(255, 255, 255,0.7);
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
 }
 
 #popupcontent{
@@ -189,15 +297,25 @@ html, body{
     padding-top: 5vh;
     padding-bottom: 5vh;
     border: solid;
-    border-color: black;
+    border-color: lime;
     border-radius: 25px;
     width: 70vw;
-    background-color: white;
+    background-color: black;
 }
 
 #popupimg{
-    height:30%;
-    width:auto;
-    background-size:contain;
-    background-repeat: no-repeat;
+    height:25vh;
+    width:100%;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    filter: brightness(70%);
+}
+#popupimg > img{
+    height:98%;
+}
+
+#optional, #lines, #col1{
+    margin-left:var(--aligndiagram);
 }

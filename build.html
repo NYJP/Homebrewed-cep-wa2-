@@ -4,46 +4,51 @@
     <title>Project Homebrew: build</title>
     <link rel="stylesheet" href="css/css_build.css">
 </head>
-<body>
+<body onload="resizenav()">
     </div>
     <div id='banner'>
         <div id='header'>Project <br> Homebrew <br> [Build]</div>
     </div>
 
     <div id='nav'>
-        <div class = 'nav' id='home'><a href='index.html'><img src='css/Resources/home.png'></a></div>
-        <div class = 'nav' id='about'><a href='about.html'><img src='css/Resources/about.png'></a></div>
-        <div class = 'nav' id='components'><a href='components.html'><img src='css/Resources/components.png'></a></div>
+        <div class = 'nav' onclick="window.open('index.html','_self')"><a href='index.html'><img src='css/Resources/home.png'>Home</a></div>
+        <div class = 'nav' onclick="window.open('about.html','_self')"><a href='about.html'><img src='css/Resources/about.png'>About</a></div>
+        <div class = 'nav'  onclick="window.open('components.html','_self')"><a href='components.html'><img src='css/Resources/components.png'>Components</a></div>
     </div>
     
     <div class='col' id='col1'>
-        <div><img onclick="showpopup('Buy Parts')" src='css/Resources/Shop.png'></div>
-        <div><img onclick="showpopup('Prepare Operating System')" src='css/Resources/OS drive.png'></div>
-        <div><img onclick="showpopup('Install Motherboard')" src='css/Resources/Insert Motherboard.png'></div>
-        <div><img onclick="showpopup('Install GPU')" src='css/Resources/graphics card.png'></div>
-        <div><img onclick="showpopup('Complete Wiring')" src='css/Resources/wire.png'></div>
-        <div><img onclick="showpopup('Close up casing')" src='css/Resources/Close Casing.png'></div>
-        <div><img onclick="showpopup('Configure BIOS')" src='css/Resources/BIOS.png'></div>
+        <div><img onclick="showpopup('Buy Parts')" src='css/Resources/Shop.png'><div class='name' onclick="showpopup('Buy Parts')">2</div></div>
+        <div><img onclick="showpopup('Prepare Operating System')" src='css/Resources/OS drive.png'><div class='name' onclick="showpopup('Prepare Operating System')">4</div></div>
+        <div><img onclick="showpopup('Install Motherboard')" src='css/Resources/Insert Motherboard.png'><div class='name' onclick="showpopup('Install Motherboard')">6</div></div>
+        <div><img onclick="showpopup('Install GPU')" src='css/Resources/graphics card.png'><div class='name' onclick="showpopup('Install GPU')">8</div></div>
+        <div><img onclick="showpopup('Complete Wiring')" src='css/Resources/wire.png'><div class='name' onclick="showpopup('Complete Wiring')">10</div></div>
+        <div><img onclick="showpopup('Close up casing')" src='css/Resources/Close Casing.png'><div class='name' onclick="showpopup('Close up casing')">12</div></div>
+        <div><img onclick="showpopup('Configure BIOS')" src='css/Resources/BIOS.png'><div class='name' onclick="showpopup('Configure BIOS')">14</div></div>
     </div>
     <div class='col' id='col2'>
         <img src='css/Resources/Process diagram.png'>
     </div>
     <div class='col' id='col3'>
-        <div><img onclick="showpopup('Research and Plan')" src='css/Resources/Research.png'></div>
-        <div><img onclick="showpopup('Prepare Casing')" src='css/Resources/casing.png'></div>
-        <div><img onclick="showpopup('Prepare Motherboard')" src='css/Resources/Prepare Motherboard.png'></div>
-        <div><img onclick="showpopup('Install PSU')" src='css/Resources/power supply.png'></div>
-        <div><img onclick="showpopup('Install HDD*')" src='css/Resources/hard disk drive.png'></div>
-        <div><img onclick="showpopup('Install Fan*')" src='css/Resources/fan.png'></div>
-        <div><img onclick="showpopup('Connect input and output devices')" src='css/Resources/Connect IO devices.png'></div>
+        <div><img onclick="showpopup('Research and Plan')" src='css/Resources/Research.png'><div class='name' onclick="showpopup('Research and Plan')">1</div></div>
+        <div><img onclick="showpopup('Prepare Casing')" src='css/Resources/casing.png'><div class='name' onclick="showpopup('Prepare Casing')">3</div></div>
+        <div><img onclick="showpopup('Prepare Motherboard')" src='css/Resources/Prepare Motherboard.png'><div class='name' onclick="showpopup('Prepare Motherboard')">5</div></div>
+        <div><img onclick="showpopup('Install PSU')" src='css/Resources/power supply.png'><div class='name' onclick="showpopup('Install PSU')">7</div></div>
+        <div><img onclick="showpopup('Install HDD *OPTIONAL*')" src='css/Resources/hard disk drive.png'><div class='name' onclick="showpopup('Install HDD *OPTIONAL*')">9</div></div>
+        <div><img onclick="showpopup('Install Fan *OPTIONAL*')" src='css/Resources/fan.png'><div class='name' onclick="showpopup('Install Fan *OPTIONAL*')">11</div></div>
+        <div><img onclick="showpopup('Connect input and output devices')" src='css/Resources/Connect IO devices.png'><div class='name' onclick="showpopup('Connect input and output devices')">13</div></div>
+    </div>
+    
+    <div id='congratulations'>
+        <div class='name' onclick="showpopup('Congratulations!')">15</div>
     </div>
 
     <div id='popup'>
+        <div id = 'confetti'></div>
         <div id='popupcontent'>
             <h1 style='margin-top:5px' id='popupheader'>Component</h1>
-            <div id='popupimg'></div>
+            <div id='popuptop'></div>
             <br><div id='popuptxt'>text added by js</div>
-        </div>
+            <div id='popuptips'>˅</div>
     </div>
     
     <script src="Javascript/build.js"></script>
